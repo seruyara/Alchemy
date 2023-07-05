@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :products , only: [:show, :index, :update]
+  resources :items , only: [:show, :index, :update]
   resources :carts , only: [:show, :index, :update, :destroy]
   resources :users , only: [:index]
   post "/signup", to: "users#create"

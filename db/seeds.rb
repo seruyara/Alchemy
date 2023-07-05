@@ -1,3 +1,4 @@
+puts '👘 seeding...'
 
 # Users
 users_data = [
@@ -68,7 +69,7 @@ users_data = [
   end
   
   # Products
-  products_data = [
+     items_data = [
     { 
         'name': 'Gorpcore Flap Pocket Side Cargo Pants', 
         'image': 'https://i.pinimg.com/564x/6f/1d/dd/6f1ddd9126bcfe0dd5d55b3c0433ce55.jpg', 
@@ -254,19 +255,20 @@ users_data = [
     },
 ]
   
-  products_data.each do |product_data|
-    Product.create(product_data)
+  items_data.each do |item_data|
+    Item.create(item_data)
   end
   
   # Carts
   carts_data = [
-  { 'product_id': 1, 'user_id': 1, 'price': 25, 'total': 25, 'quantity': 1 },
-  { 'product_id': 2, 'user_id': 2, 'price': 40, 'total': 80, 'quantity': 2 },
-  { 'product_id': 3, 'user_id': 1, 'price': 65, 'total': 65, 'quantity': 1 },
-  { 'product_id': 4, 'user_id': 3, 'price': 55, 'total': 55, 'quantity': 1 },
-  { 'product_id': 5, 'user_id': 2, 'price': 75, 'total': 75, 'quantity': 3 },
+  { 'item_id': 1, 'user_id': 1, 'price': 25, 'total': 25, 'quantity': 1 },
+  { 'item_id': 2, 'user_id': 2, 'price': 40, 'total': 80, 'quantity': 2 },
+  { 'item_id': 3, 'user_id': 1, 'price': 65, 'total': 65, 'quantity': 1 },
+  { 'item_id': 4, 'user_id': 3, 'price': 55, 'total': 55, 'quantity': 1 },
+  { 'item_id': 5, 'user_id': 2, 'price': 75, 'total': 75, 'quantity': 3 },
   ]
   carts_data.each do |cart_data|
     Cart.create(cart_data)
   end
   
+  puts 'done seeding...'
