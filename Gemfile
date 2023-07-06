@@ -16,6 +16,8 @@ gem 'active_model_serializers'
 
 gem 'solargraph'
 
+gem 'rack-cors', require: 'rack/cors'
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 
