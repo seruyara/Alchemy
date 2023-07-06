@@ -2,13 +2,16 @@ class CartsController < ApplicationController
   before_action :set_cart, only: %i[ show update destroy ]
   # GET /carts
   def index
-    carts = Cart.all
-    render json: carts
-  end
-  # GET /carts/1
-  def show
+    cart = Cart.all
     render json: cart
   end
+
+  # GET /carts/1
+  def show
+    cart = Cart.find_by(id: params[:id])
+    render json: cart
+  end
+
   # POST /carts
   def create
     cart = Cart.new(cart_params)
@@ -18,6 +21,7 @@ class CartsController < ApplicationController
       render json: cart.errors, status: :unprocessable_entity
     end
   end
+
   # PATCH/PUT /carts/1
   def update
     if cart.update(cart_params)
@@ -26,6 +30,7 @@ class CartsController < ApplicationController
       render json: cart.errors, status: :unprocessable_entity
     end
   end
+
   # DELETE /carts/1
   def destroy
     cart.destroy
@@ -37,6 +42,6 @@ class CartsController < ApplicationController
     end
     # Only allow a list of trusted parameters through.
     def cart_params
-      params.require(:cart).permit(:product_id, :user_id, :price, :total, :quantity)
+      params.permit(:product_id, :user_id, :price, :total, :quantity)
     end
 end
