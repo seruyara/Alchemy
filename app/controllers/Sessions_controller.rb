@@ -16,4 +16,4 @@ class SessionsController < ApplicationController
           render json: { error: ["Not logged in"] }, status: :unauthorized
         end
     end
-end
+end 
